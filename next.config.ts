@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
 
-// Static export for GitHub Pages. The site is served from the /greyout-page
-// subpath today (https://caasols.github.io/greyout-page/); when greyout.cc is
-// wired as a custom domain at the root, set BASE_PATH="" (or unset it).
-const basePath = process.env.BASE_PATH ?? "/greyout-page";
+// Static export for GitHub Pages. The site is now served at the custom-domain
+// ROOT (https://greyout.cc/ — see public/CNAME), so basePath is empty: assets must
+// be root-relative (/_next/...), NOT /greyout-page/_next/... To build for the bare
+// github.io subpath again, set BASE_PATH="/greyout-page".
+const basePath = process.env.BASE_PATH ?? "";
 
 const nextConfig: NextConfig = {
   output: "export",
