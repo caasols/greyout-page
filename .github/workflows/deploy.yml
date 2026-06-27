@@ -18,7 +18,11 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 20, cache: npm }
       - run: npm ci
-      - run: npm run build
+      - name: Build (inject app version from appcast)
+        run: |
+          VERSION=$(grep -oE '<sparkle:version>[^<]+' public/appcast.xml | head -1 | sed 's/.*>//')
+          echo "Building site with app version: $VERSION"
+          NEXT_PUBLIC_APP_VERSION="$VERSION" npm run build
       - uses: actions/upload-pages-artifact@v3
         with: { path: out }
   deploy:

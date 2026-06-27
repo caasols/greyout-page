@@ -4,6 +4,10 @@ import { Cloud, AppWindow, CalendarClock, Keyboard, Download } from "lucide-reac
 const DOWNLOAD_URL =
   "https://github.com/caasols/greyout-page/releases/latest/download/Greyout-macOS.zip";
 
+// Version is injected at build time from the appcast (see the deploy workflow,
+// which sets NEXT_PUBLIC_APP_VERSION from public/appcast.xml before `next build`).
+const VERSION = process.env.NEXT_PUBLIC_APP_VERSION ?? null;
+
 const features = [
   { icon: AppWindow, title: "Per-app rules", body: "Auto-grey distracting apps; keep colour where you need it." },
   { icon: CalendarClock, title: "On a schedule", body: "Wind down into greyscale toward the evening, automatically." },
@@ -11,6 +15,7 @@ const features = [
 ];
 
 export default function Home() {
+  const version = VERSION;
   return (
     <main className="flex flex-1 flex-col items-center justify-center px-6 py-20 text-center">
       <div className="mx-auto w-full max-w-2xl">
@@ -33,7 +38,7 @@ export default function Home() {
           <Button asChild size="lg" className="h-12 px-7 text-base">
             <a href={DOWNLOAD_URL}>
               <Download className="size-5" />
-              Download for macOS
+              Download for macOS{version ? ` · v${version}` : ""}
             </a>
           </Button>
           <span className="text-sm text-muted-foreground">
