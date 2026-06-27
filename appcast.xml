@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+  <channel>
+    <title>Greyout</title>
+    <link>https://caasols.github.io/greyout-page/appcast.xml</link>
+    <item>
+      <title>Greyout 0.2.2</title>
+      <pubDate>Sat, 27 Jun 2026 16:13:38 +0000</pubDate>
+      <sparkle:version>0.2.2</sparkle:version>
+      <sparkle:shortVersionString>0.2.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/caasols/greyout-page/releases/download/0.2.2/Greyout-0.2.2.zip" sparkle:edSignature="80dPC2AcwONWjcCz/iYlR/l8oOfi2sgsxqT6uQL0dzCqvcs1pklZedCV8UK7C+lkPiMS1Cj6uJlESEsKryHHAg==" length="1202484" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>
