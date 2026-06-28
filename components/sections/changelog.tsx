@@ -40,9 +40,16 @@ function cleanSummary(
   name: string | null,
   version: string,
 ): string {
-  let s = (body ?? "").trim();
-  s = s.split(/\r?\n\s*\r?\n/)[0].split(/\r?\n/)[0].trim();
-  s = s.replace(/^Greyout\s+v?[\d.]+\s*[—–-]\s*/i, "");
+  // Notes may be a one-liner ("Greyout 0.9.1 — …") or a CHANGELOG.md section
+  // (markdown: ### sub-heading, then bullets). Take the first line of real
+  // content and strip markdown so the on-page summary stays clean.
+  const lines = (body ?? "").split(/\r?\n/);
+  let s = (lines.find((l) => l.trim() && !/^\s*#{1,6}\s/.test(l)) ?? "").trim();
+  s = s.replace(/^[-*]\s+/, ""); // list bullet
+  s = s.replace(/\*\*([^*]+)\*\*/g, "$1"); // **bold**
+  s = s.replace(/`([^`]+)`/g, "$1"); // `code`
+  s = s.replace(/\[([^\]]+)\]\([^)]*\)/g, "$1"); // [text](link)
+  s = s.replace(/^Greyout\s+v?[\d.]+\s*[—–-]\s*/i, ""); // "Greyout x.y.z —" prefix
   // Drop "See CHANGELOG(.md)" boilerplate wherever it appears, then tidy up.
   s = s.replace(/\s*See\s+CHANGELOG(\.md)?\.?/gi, " ").replace(/\s{2,}/g, " ").trim();
   s = s.replace(/^[\s.,;:–—-]+/, "").trim();
