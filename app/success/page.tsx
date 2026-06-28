@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Check, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DOWNLOAD_URL, SUPPORT_EMAIL } from "@/lib/site";
@@ -47,9 +48,12 @@ export default function SuccessPage() {
             Download for macOS
           </a>
         </Button>
-        <a href="/" className="text-sm text-muted-foreground underline-offset-4 hover:underline">
+        <Link
+          href="/"
+          className="text-sm text-muted-foreground underline-offset-4 hover:underline"
+        >
           Back to greyout.cc
-        </a>
+        </Link>
       </div>
 
       <p className="mt-10 text-xs text-muted-foreground">

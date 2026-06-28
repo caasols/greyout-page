@@ -37,7 +37,7 @@ export function Hero() {
           </a>
         </p>
         <span className="text-sm text-muted-foreground">
-          Requires macOS 14+ · free · self-updating
+          Requires macOS 14+ · Apple silicon · free · self-updating
         </span>
         <p className="text-sm text-muted-foreground">
           Free forever —{" "}
