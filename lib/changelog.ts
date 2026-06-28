@@ -4,9 +4,10 @@ export interface Release {
   summary: string;
 }
 
-// Curated public release history, newest first. The Sparkle appcast only
-// carries the latest build, so the on-page changelog reads from this list.
-// Add an entry here whenever you cut a release (mirror the GitHub release note).
+// Build-time FALLBACK only. The changelog section now fetches GitHub Releases
+// at build (see components/sections/changelog.tsx); this curated snapshot is
+// used solely if that fetch fails (offline / rate-limited), so the build never
+// breaks and the section is never empty. No need to keep it perfectly current.
 export const RELEASES: Release[] = [
   {
     version: "0.9.1",

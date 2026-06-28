@@ -19,6 +19,10 @@ jobs:
         with: { node-version: 20, cache: npm }
       - run: npm ci
       - name: Build (inject app version and size from appcast)
+        env:
+          # Lets the changelog section fetch GitHub Releases at build with a
+          # higher rate limit (the repo is public, so this is read-only).
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           VERSION=$(grep -oE '<sparkle:version>[^<]+' public/appcast.xml | head -1 | sed 's/.*>//')
           echo "Building site with app version: $VERSION"
