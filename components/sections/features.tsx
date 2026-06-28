@@ -53,15 +53,12 @@ export function Features() {
         ))}
       </div>
 
-      <h3 className="mt-12 text-xs font-medium uppercase tracking-wider text-muted-foreground">
-        Integrations
-      </h3>
-      <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {integrations.map((f) => (
           <div key={f.title} className="rounded-xl border bg-card p-5">
             <f.icon className="size-5 text-muted-foreground" strokeWidth={1.75} />
             <div className="mt-3 flex items-center gap-2">
-              <h4 className="font-medium">{f.title}</h4>
+              <h3 className="font-medium">{f.title}</h3>
               {f.status && (
                 <span className="rounded-full border px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
                   {f.status}
