@@ -21,6 +21,15 @@ function formatDate(pubDate: string): string {
   }
 }
 
+// Machine-readable date for the <time> element. Returns undefined (so the
+// dateTime attribute is omitted) when pubDate is missing or unparseable —
+// new Date("…").toISOString() throws RangeError on invalid input, which would
+// crash the static build.
+function isoDate(pubDate: string): string | undefined {
+  const d = new Date(pubDate);
+  return isNaN(d.getTime()) ? undefined : d.toISOString().slice(0, 10);
+}
+
 export default function ChangelogPage() {
   const releases = readAppcast();
 
@@ -41,7 +50,7 @@ export default function ChangelogPage() {
                 <h2 className="text-base font-semibold">{release.title}</h2>
                 {release.pubDate && (
                   <time
-                    dateTime={new Date(release.pubDate).toISOString().slice(0, 10)}
+                    dateTime={isoDate(release.pubDate)}
                     className="text-xs text-muted-foreground"
                   >
                     {formatDate(release.pubDate)}
