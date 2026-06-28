@@ -3,8 +3,6 @@ import { Cloud, Download } from "lucide-react";
 import { DOWNLOAD_URL, APP_VERSION, APP_SIZE } from "@/lib/site";
 
 export function Hero() {
-  const version = APP_VERSION;
-  const size = APP_SIZE;
   return (
     <div className="mx-auto w-full max-w-2xl">
       <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-2xl border bg-muted/40">
@@ -28,7 +26,8 @@ export function Hero() {
         <Button asChild size="lg" className="h-12 px-7 text-base">
           <a href={DOWNLOAD_URL}>
             <Download className="size-5" />
-            Download for macOS{version ? ` · v${version}` : ""}{size ? ` · ${size}` : ""}
+            Download for macOS{APP_VERSION ? ` · v${APP_VERSION}` : ""}
+            {APP_SIZE ? ` · ${APP_SIZE}` : ""}
           </a>
         </Button>
         <p className="text-xs text-muted-foreground">
@@ -42,7 +41,7 @@ export function Hero() {
         </span>
         <p className="text-sm text-muted-foreground">
           Free forever —{" "}
-          <a href="#faq" className="underline-offset-4 hover:underline">
+          <a href="#premium" className="underline-offset-4 hover:underline">
             optional Premium
           </a>{" "}
           to support development

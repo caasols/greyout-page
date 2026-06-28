@@ -10,6 +10,7 @@ export const APP_SIZE = process.env.NEXT_PUBLIC_APP_SIZE ?? null; // e.g. "1.3 M
 export const NAV = [
   { href: "/#see-it", label: "How it works" },
   { href: "/#features", label: "Features" },
+  { href: "/#premium", label: "Premium" },
   { href: "/#faq", label: "FAQ" },
   { href: "/#changelog", label: "Changelog" },
 ];

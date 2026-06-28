@@ -24,9 +24,13 @@ jobs:
           # higher rate limit (the repo is public, so this is read-only).
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # Version = first <sparkle:version> (newest item is first in the appcast).
           VERSION=$(grep -oE '<sparkle:version>[^<]+' public/appcast.xml | head -1 | sed 's/.*>//')
+          [ -n "$VERSION" ] || { echo "ERROR: could not extract version from public/appcast.xml"; exit 1; }
           echo "Building site with app version: $VERSION"
-          BYTES=$(grep -oE 'length="[0-9]+"' public/appcast.xml | head -1 | grep -oE '[0-9]+')
+          # Size = length= on the FULL app enclosure (Greyout-macOS.zip) specifically,
+          # so a future <sparkle:deltas> entry (which also carries length=) is ignored.
+          BYTES=$(grep 'Greyout-macOS.zip' public/appcast.xml | grep -oE 'length="[0-9]+"' | head -1 | grep -oE '[0-9]+')
           [ -n "$BYTES" ] || { echo "ERROR: could not extract size from public/appcast.xml"; exit 1; }
           SIZE=$(awk "BEGIN{printf \"%.1f MB\", $BYTES/1048576}")
           echo "App size: $SIZE"
