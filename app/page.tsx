@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/hero";
 import { Features } from "@/components/sections/features";
 import { SeeIt } from "@/components/sections/see-it";
+import { Premium } from "@/components/sections/premium";
 import { Faq } from "@/components/sections/faq";
 import { Changelog } from "@/components/sections/changelog";
 
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <SeeIt />
       <Features />
+      <Premium />
       <Faq />
       <Changelog />
     </main>
