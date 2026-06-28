@@ -13,29 +13,6 @@ export function SeeIt() {
           ▶ Demo GIF coming — keypress toggles greyscale
         </span>
       </div>
-
-      {/* Before / after pair */}
-      {/* TODO(asset): real screenshots */}
-      <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <div className="aspect-video rounded-xl border border-dashed border-border bg-muted/30 flex items-center justify-center">
-          <span className="text-sm text-muted-foreground select-none">
-            Before (colour)
-          </span>
-        </div>
-        <div className="aspect-video rounded-xl border border-dashed border-border bg-muted/30 flex items-center justify-center">
-          <span className="text-sm text-muted-foreground select-none">
-            After (greyscale)
-          </span>
-        </div>
-      </div>
-
-      {/* Menu-bar shot placeholder */}
-      {/* TODO(asset) */}
-      <div className="mt-4 w-full max-w-xs aspect-video rounded-xl border border-dashed border-border bg-muted/30 flex items-center justify-center">
-        <span className="text-sm text-muted-foreground select-none">
-          Menu-bar dropdown
-        </span>
-      </div>
     </section>
   );
 }

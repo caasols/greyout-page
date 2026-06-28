@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { Cloud, Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Cloud } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { NAV, DOWNLOAD_URL } from "@/lib/site";
+import { NAV } from "@/lib/site";
 
 export function SiteHeader() {
   return (
@@ -35,12 +34,6 @@ export function SiteHeader() {
 
         {/* Right controls */}
         <ThemeToggle />
-        <Button asChild size="sm">
-          <a href={DOWNLOAD_URL} download>
-            <Download className="size-3.5" aria-hidden="true" />
-            Download
-          </a>
-        </Button>
       </div>
     </header>
   );
