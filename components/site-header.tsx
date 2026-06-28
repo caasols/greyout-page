@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Cloud } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { MobileNav } from "@/components/mobile-nav";
 import { NAV } from "@/lib/site";
 
 export function SiteHeader() {
@@ -34,6 +35,7 @@ export function SiteHeader() {
 
         {/* Right controls */}
         <ThemeToggle />
+        <MobileNav />
       </div>
     </header>
   );
