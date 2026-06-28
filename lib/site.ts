@@ -5,9 +5,11 @@ export const SUPPORT_EMAIL = "hello@greyout.cc";
 export const GITHUB_URL = "https://github.com/caasols";
 export const APP_VERSION = process.env.NEXT_PUBLIC_APP_VERSION ?? null;
 export const APP_SIZE = process.env.NEXT_PUBLIC_APP_SIZE ?? null; // e.g. "1.3 MB"
+// Root-relative anchors so the nav works from any page (e.g. /privacy), not
+// just the home page. Order mirrors the on-page section flow.
 export const NAV = [
-  { href: "#features", label: "Features" },
-  { href: "#see-it", label: "How it works" },
-  { href: "#faq", label: "FAQ" },
-  { href: "/changelog", label: "Changelog" },
+  { href: "/#see-it", label: "How it works" },
+  { href: "/#features", label: "Features" },
+  { href: "/#faq", label: "FAQ" },
+  { href: "/#changelog", label: "Changelog" },
 ];
