@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/hero";
 import { Features } from "@/components/sections/features";
 import { SeeIt } from "@/components/sections/see-it";
+import { Faq } from "@/components/sections/faq";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <Features />
       <SeeIt />
+      <Faq />
     </main>
   );
 }
