@@ -1,12 +1,10 @@
 import { Cloud } from "lucide-react";
-import { GITHUB_URL } from "@/lib/site";
 
 const footerLinks = [
   { href: "/privacy", label: "Privacy" },
   { href: "/terms", label: "Terms" },
   { href: "/#changelog", label: "Changelog" },
   { href: "/contact", label: "Contact" },
-  { href: GITHUB_URL, label: "GitHub" },
 ];
 
 export function SiteFooter() {
@@ -25,10 +23,7 @@ export function SiteFooter() {
           ))}
         </nav>
         <p>
-          Made with <Cloud className="inline size-3.5 align-[-2px]" /> ·{" "}
-          <a href={GITHUB_URL} className="underline-offset-4 hover:underline">
-            caasols
-          </a>
+          Made with <Cloud className="inline size-3.5 align-[-2px]" /> · caasols
         </p>
       </div>
     </footer>

@@ -125,7 +125,7 @@ export async function Changelog() {
   const hidden = releases.slice(VISIBLE_COUNT);
 
   return (
-    <section id="changelog" className="mt-24 w-full max-w-3xl text-left">
+    <section id="changelog" className="mt-24 w-full max-w-5xl px-6 text-left">
       <h2 className="text-2xl font-semibold tracking-tight">Changelog</h2>
       <p className="mt-2 text-sm text-muted-foreground">
         Greyout updates itself automatically. Here&apos;s what&apos;s changed.

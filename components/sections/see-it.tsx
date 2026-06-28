@@ -1,6 +1,6 @@
 export function SeeIt() {
   return (
-    <section id="see-it" className="mt-24 w-full max-w-3xl text-left">
+    <section id="see-it" className="mt-24 w-full max-w-5xl px-6 text-left">
       <h2 className="text-2xl font-semibold tracking-tight">How it works</h2>
       <p className="mt-2 text-muted-foreground">
         See what it does in two seconds.

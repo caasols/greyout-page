@@ -251,7 +251,7 @@ const faqs = [
 
 export function Faq() {
   return (
-    <section id="faq" className="mt-24 w-full max-w-3xl text-left">
+    <section id="faq" className="mt-24 w-full max-w-5xl px-6 text-left">
       <h2 className="text-2xl font-semibold tracking-tight">Questions</h2>
       <Accordion type="single" collapsible className="mt-8">
         {faqs.map((faq) => (

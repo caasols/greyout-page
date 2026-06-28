@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SUPPORT_EMAIL, GITHUB_URL } from "@/lib/site";
+import { SUPPORT_EMAIL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact — Greyout",
@@ -84,16 +84,7 @@ export default function ContactPage() {
             >
               FAQ
             </Link>
-            . The code and issues live on{" "}
-            <a
-              href={GITHUB_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-4 hover:text-foreground"
-            >
-              GitHub
-            </a>{" "}
-            too.
+            .
           </p>
         </section>
       </div>
