@@ -4,12 +4,12 @@
     <title>Greyout</title>
     <link>https://caasols.github.io/greyout-page/appcast.xml</link>
     <item>
-      <title>Greyout 0.8.0</title>
-      <pubDate>Sat, 27 Jun 2026 22:54:39 +0000</pubDate>
-      <sparkle:version>0.8.0</sparkle:version>
-      <sparkle:shortVersionString>0.8.0</sparkle:shortVersionString>
+      <title>Greyout 0.9.0</title>
+      <pubDate>Sun, 28 Jun 2026 10:33:06 +0000</pubDate>
+      <sparkle:version>0.9.0</sparkle:version>
+      <sparkle:shortVersionString>0.9.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-      <enclosure url="https://github.com/caasols/greyout-page/releases/download/0.8.0/Greyout-macOS.zip" sparkle:edSignature="3b6/+06AFRq4UkiJRuKz4zjaoVCvnJHRSEI8eZPfnPRN0Vnmd46CcVhiN2nY2AtDByveIY5KFjM/KMag9m8PDA==" length="1286192" type="application/octet-stream" />
+      <enclosure url="https://github.com/caasols/greyout-page/releases/download/0.9.0/Greyout-macOS.zip" sparkle:edSignature="4FVcHiIe+2eUhx5VSbdjV83N52FN8GerYTTQiRB3H/zQqW74ucpA2quwaRQltEDvWqggVYbCUQ2XBaC/zQ+RDA==" length="1304631" type="application/octet-stream" />
     </item>
   </channel>
 </rss>
