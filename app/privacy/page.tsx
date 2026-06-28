@@ -25,7 +25,10 @@ export default function PrivacyPage() {
           <p className="text-muted-foreground">
             None. Greyout stores your preferences and per-app rules exclusively
             on your device. No account is required, and nothing is transmitted
-            to any server operated by Greyout.
+            to any server operated by Greyout. The app does make two
+            third-party network requests — for update checks and (only if you
+            buy Premium) licence validation — described in &lsquo;Network
+            requests&rsquo; below.
           </p>
         </section>
 
