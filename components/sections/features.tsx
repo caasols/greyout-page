@@ -25,6 +25,7 @@ const integrations = [
     icon: Terminal,
     title: "Command line",
     body: "Script it from the terminal: open greyout://toggle.",
+    status: "In testing",
   },
   {
     icon: Workflow,
