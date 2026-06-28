@@ -14,6 +14,7 @@ export const PREMIUM_RAISED_EUR = 0;
 export const RUNNING_COSTS = [
   { label: "Domain", detail: "Namecheap", amount: 12, cadence: "per year" },
   { label: "Build & research", detail: "AI tokens", amount: 25, cadence: "one-time" },
+  { label: "Maintenance, polish & bug fixes", detail: "AI tokens", amount: 0, cadence: "so far" },
   { label: "Notarization", detail: "Apple Developer", amount: 90, cadence: "per year" },
 ] as const;
 

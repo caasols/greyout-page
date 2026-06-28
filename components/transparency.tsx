@@ -10,10 +10,11 @@ export function Transparency() {
     <div className="space-y-4">
       <p>
         Greyout is free, and it stays free. But keeping it running still costs
-        real money out of pocket, so in the spirit of the transparency reports
-        some newsrooms and research groups publish, here&apos;s exactly where it
-        goes. (This ignores the time I spent building and researching it, which I
-        give for free.)
+        real money out of my own pocket, so in the spirit of the transparency
+        reports some newsrooms and research groups publish, here are the running
+        costs for 2026 and exactly where the money goes. (This ignores the time
+        I spend building, researching, and maintaining it, which I give for
+        free.)
       </p>
 
       <ul className="space-y-1.5">
@@ -30,7 +31,7 @@ export function Transparency() {
           </li>
         ))}
         <li className="flex items-baseline justify-between gap-4 border-t border-border pt-1.5">
-          <span className="font-medium text-foreground">Total, first year</span>
+          <span className="font-medium text-foreground">Total for 2026</span>
           <span className="shrink-0 font-medium tabular-nums text-foreground">
             €{total}
           </span>
