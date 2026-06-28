@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
 import { BUY_URL, SUPPORT_EMAIL } from "@/lib/site";
 
 const faqs = [
@@ -22,16 +23,24 @@ const faqs = [
     id: "premium",
     question: "What does Premium unlock, and how does it work?",
     answer: (
-      <p>
-        Premium adds Export, Import, and Backup of your rules and settings.
-        It&apos;s a one-time, pay-what-you-want purchase (from €3) through{" "}
-        <a href={BUY_URL} target="_blank" rel="noopener noreferrer">
-          Polar
-        </a>
-        , which acts as merchant of record and handles VAT. Your licence key
-        works on up to 3 Macs and never expires. Everything else in Greyout is
-        free.
-      </p>
+      <div className="space-y-4">
+        <p>
+          Premium adds Export, Import, and Backup of your rules and settings.
+          It&apos;s a one-time, pay-what-you-want purchase (from €3) through{" "}
+          <a href={BUY_URL} target="_blank" rel="noopener noreferrer">
+            Polar
+          </a>
+          , which acts as merchant of record and handles VAT. Your licence key
+          works on up to 3 Macs and never expires. Everything else in Greyout is
+          free. Already have a key? Activate it in Greyout → Preferences →
+          Premium.
+        </p>
+        <Button asChild size="sm">
+          <a href={BUY_URL} target="_blank" rel="noopener noreferrer">
+            Get Premium
+          </a>
+        </Button>
+      </div>
     ),
   },
   {

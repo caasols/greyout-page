@@ -38,7 +38,7 @@ export function Hero() {
         </span>
         <p className="text-sm text-muted-foreground">
           Free forever —{" "}
-          <a href="#premium" className="underline-offset-4 hover:underline">
+          <a href="#faq" className="underline-offset-4 hover:underline">
             optional Premium
           </a>{" "}
           to support development
