@@ -6,6 +6,17 @@ export const SUPPORT_EMAIL = "hello@greyout.cc";
 export const GITHUB_URL = "https://github.com/caasols";
 export const APP_VERSION = process.env.NEXT_PUBLIC_APP_VERSION ?? null;
 export const APP_SIZE = process.env.NEXT_PUBLIC_APP_SIZE ?? null; // e.g. "1.3 MB"
+
+// Transparency report (powers the "If Greyout is free, why ask for money?" FAQ).
+// Out-of-pocket costs to keep Greyout running, and how much optional Premium has
+// covered so far. Bump PREMIUM_RAISED_EUR as sales come in; the bar updates itself.
+export const PREMIUM_RAISED_EUR = 0;
+export const RUNNING_COSTS = [
+  { label: "Domain", detail: "Namecheap", amount: 12, cadence: "per year" },
+  { label: "Build & research", detail: "AI tokens", amount: 25, cadence: "one-time" },
+  { label: "Notarization", detail: "Apple Developer", amount: 90, cadence: "per year" },
+] as const;
+
 // Root-relative anchors so the nav works from any page (e.g. /privacy), not
 // just the home page. Order mirrors the on-page section flow.
 export const NAV = [

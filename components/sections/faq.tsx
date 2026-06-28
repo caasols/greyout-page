@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/section";
+import { Transparency } from "@/components/transparency";
 import { BUY_URL, SUPPORT_EMAIL } from "@/lib/site";
 
 // Shared style for inline links inside answers so they read as links.
@@ -22,6 +23,11 @@ const faqs = [
         you&apos;d like to support development. See below.
       </p>
     ),
+  },
+  {
+    id: "why-pay",
+    question: "If Greyout is free, why ask for money?",
+    answer: <Transparency />,
   },
   {
     id: "premium",
