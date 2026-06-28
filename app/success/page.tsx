@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { DOWNLOAD_URL, SUPPORT_EMAIL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Thank you — Greyout Premium",
+  title: "Thank you · Greyout Premium",
   // Order pages shouldn't be indexed.
   robots: { index: false, follow: false },
 };
@@ -22,7 +22,7 @@ export default function SuccessPage() {
       </h1>
       <p className="mt-3 text-pretty text-muted-foreground">
         Your payment went through and your Premium licence is on its way. Polar
-        (our merchant of record) is emailing your licence key now — check your
+        (our merchant of record) is emailing your licence key now. Check your
         inbox, and your spam folder if it doesn&apos;t arrive in a few minutes.
       </p>
 
@@ -37,7 +37,7 @@ export default function SuccessPage() {
             </span>
             .
           </li>
-          <li>Paste your key and activate — that&apos;s it.</li>
+          <li>Paste your key and activate. That&apos;s it.</li>
         </ol>
       </div>
 

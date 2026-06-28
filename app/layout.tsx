@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Nunito_Sans } from "next/font/google";
+import { Geist_Mono, Nunito_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -7,20 +7,19 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/sections/site-footer";
 
 const nunitoSans = Nunito_Sans({ subsets: ["latin"], variable: "--font-sans" });
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://greyout.cc"),
   applicationName: "Greyout",
-  title: "Greyout — grey out your screen, kill the distraction",
+  title: "Greyout: grey out your screen, kill the distraction",
   description:
     "A macOS menu-bar app that greys out your screen to reduce the pull of colour and notifications. Per-app rules, schedules, one keypress.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Greyout — grey out your screen, kill the distraction",
+    title: "Greyout: grey out your screen, kill the distraction",
     description:
       "A macOS menu-bar app that greys out your screen to reduce the pull of colour and notifications. Per-app rules, schedules, one keypress.",
     url: "https://greyout.cc",
@@ -30,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Greyout — grey out your screen, kill the distraction",
+    title: "Greyout: grey out your screen, kill the distraction",
     description:
       "A macOS menu-bar app that greys out your screen to reduce the pull of colour and notifications. Per-app rules, schedules, one keypress.",
   },
@@ -59,7 +58,6 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn(
         "h-full antialiased font-sans",
-        geistSans.variable,
         geistMono.variable,
         nunitoSans.variable,
       )}

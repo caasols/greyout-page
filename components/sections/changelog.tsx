@@ -1,4 +1,5 @@
 import { ChevronDown } from "lucide-react";
+import { Section } from "@/components/section";
 import { RELEASES as FALLBACK, type Release } from "@/lib/changelog";
 
 // How many recent releases to show before the "show all" expander.
@@ -125,12 +126,11 @@ export async function Changelog() {
   const hidden = releases.slice(VISIBLE_COUNT);
 
   return (
-    <section id="changelog" className="mt-24 w-full max-w-5xl px-6 text-left">
-      <h2 className="text-2xl font-semibold tracking-tight">Changelog</h2>
-      <p className="mt-2 text-sm text-muted-foreground">
-        Greyout updates itself automatically. Here&apos;s what&apos;s changed.
-      </p>
-
+    <Section
+      id="changelog"
+      title="Changelog"
+      subtitle="Greyout updates itself automatically. Here's what's changed."
+    >
       {releases.length === 0 ? (
         <p className="mt-8 text-sm text-muted-foreground">No releases yet.</p>
       ) : (
@@ -163,6 +163,6 @@ export async function Changelog() {
           )}
         </>
       )}
-    </section>
+    </Section>
   );
 }

@@ -5,7 +5,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { Section } from "@/components/section";
 import { BUY_URL, SUPPORT_EMAIL } from "@/lib/site";
+
+// Shared style for inline links inside answers so they read as links.
+const link = "underline underline-offset-4 hover:text-foreground";
 
 const faqs = [
   {
@@ -15,7 +19,7 @@ const faqs = [
       <p>
         Yes. Greyout is free, with no account and no ads. There&apos;s an
         optional one-time Premium unlock (pay what you want, from €3) if
-        you&apos;d like to support development — see below.
+        you&apos;d like to support development. See below.
       </p>
     ),
   },
@@ -27,7 +31,7 @@ const faqs = [
         <p>
           Premium adds Export, Import, and Backup of your rules and settings.
           It&apos;s a one-time, pay-what-you-want purchase (from €3) through{" "}
-          <a href={BUY_URL} target="_blank" rel="noopener noreferrer">
+          <a href={BUY_URL} target="_blank" rel="noopener noreferrer" className={link}>
             Polar
           </a>
           , which acts as merchant of record and handles VAT. Your licence key
@@ -45,12 +49,12 @@ const faqs = [
   },
   {
     id: "difference",
-    question: "How is Greyout different from the greyscale built into macOS?",
+    question: "Why use Greyout instead of the greyscale built into macOS?",
     answer: (
       <p>
         macOS can turn on greyscale, but it&apos;s a static, all-or-nothing
         Accessibility toggle buried in System Settings. Greyout drives that same
-        system-level effect — so it greys every app and display — but adds the
+        system-level effect, so it greys every app and display, while adding the
         control that makes it usable day to day: per-app rules, schedules, a
         global hotkey, a one-click menu-bar toggle, and the{" "}
         <code>greyout://</code> URL scheme for automation. It also saves and
@@ -64,7 +68,7 @@ const faqs = [
     answer: (
       <p>
         Yes. Greyout applies greyscale across every connected display, including
-        external monitors — not just the built-in screen.
+        external monitors, not just the built-in screen.
       </p>
     ),
   },
@@ -81,12 +85,12 @@ const faqs = [
   },
   {
     id: "per-app",
-    question: "Can I keep some apps grey automatically and the rest in colour?",
+    question: "Can Greyout grey only my distracting apps and leave the rest in colour?",
     answer: (
       <p>
-        Yes — that&apos;s the core idea. Set per-app rules so distracting apps
-        (or any apps you choose) switch to greyscale automatically when
-        they&apos;re in front, while everything else stays in colour.
+        Yes, that&apos;s the core idea. Set per-app rules so distracting apps (or
+        any apps you choose) switch to greyscale automatically when they&apos;re
+        in front, while everything else stays in colour.
       </p>
     ),
   },
@@ -95,8 +99,8 @@ const faqs = [
     question: "Can I schedule greyscale?",
     answer: (
       <p>
-        Yes. You can have Greyout switch to greyscale on a schedule — for
-        example every evening — and back to colour automatically.
+        Yes. You can have Greyout switch to greyscale on a schedule, for example
+        every evening, and back to colour automatically.
       </p>
     ),
   },
@@ -124,13 +128,13 @@ const faqs = [
   },
   {
     id: "transparency",
-    question: "What data does Greyout collect? (Transparency)",
+    question: "What data does Greyout collect?",
     answer: (
       <p>
         None. Greyout has no analytics, no telemetry, and no tracking. Your
         rules and settings stay on your Mac. The app only reaches the network
-        for two things: to check for updates, and — only if you buy Premium —
-        to activate your licence with Polar. That&apos;s it.
+        for two things: to check for updates, and (only if you buy Premium) to
+        activate your licence with Polar. That&apos;s it.
       </p>
     ),
   },
@@ -140,11 +144,14 @@ const faqs = [
     answer: (
       <p>
         Your key is in your Polar purchase email. You can also retrieve it from{" "}
-        <a href="https://polar.sh" target="_blank" rel="noopener noreferrer">
+        <a href="https://polar.sh" target="_blank" rel="noopener noreferrer" className={link}>
           Polar
         </a>{" "}
         using the email address you bought with. Still stuck? Email{" "}
-        <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+        <a href={`mailto:${SUPPORT_EMAIL}`} className={link}>
+          {SUPPORT_EMAIL}
+        </a>
+        .
       </p>
     ),
   },
@@ -156,8 +163,10 @@ const faqs = [
         Premium is sold through Polar, our merchant of record, so refunds are
         handled under Polar&apos;s policy. If something&apos;s wrong with your
         purchase, reach out at{" "}
-        <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> and we&apos;ll
-        help sort it out.
+        <a href={`mailto:${SUPPORT_EMAIL}`} className={link}>
+          {SUPPORT_EMAIL}
+        </a>{" "}
+        and we&apos;ll help sort it out.
       </p>
     ),
   },
@@ -167,7 +176,7 @@ const faqs = [
     answer: (
       <p>
         Yes. Greyout is free for any use, including at work. Premium is purely an
-        optional way to support development and unlock backup of your settings —
+        optional way to support development and unlock backup of your settings;
         it&apos;s never required, for commercial use or otherwise.
       </p>
     ),
@@ -178,8 +187,8 @@ const faqs = [
     answer: (
       <p>
         Just Accessibility, which macOS requires for Greyout to apply the
-        greyscale effect across all your apps. Greyout asks for nothing else —
-        no Screen Recording, no anything.
+        greyscale effect across all your apps. Greyout asks for nothing else: no
+        Screen Recording, nothing.
       </p>
     ),
   },
@@ -206,7 +215,7 @@ const faqs = [
   },
   {
     id: "menu-bar-missing",
-    question: "The menu-bar icon disappeared — how do I get it back?",
+    question: "My menu-bar icon disappeared. How do I get it back?",
     answer: (
       <p>
         It&apos;s almost always a menu-bar manager (Bartender, Ice, the notch on
@@ -219,7 +228,7 @@ const faqs = [
   {
     id: "accessibility-regrant",
     question:
-      "Greyscale stopped working, or macOS keeps asking for Accessibility — how do I fix it?",
+      "Greyscale stopped working or macOS keeps asking for Accessibility. How do I fix it?",
     answer: (
       <p>
         This usually happens after an update leaves a stale Accessibility
@@ -233,8 +242,7 @@ const faqs = [
 
 export function Faq() {
   return (
-    <section id="faq" className="mt-24 w-full max-w-5xl px-6 text-left">
-      <h2 className="text-2xl font-semibold tracking-tight">Questions</h2>
+    <Section id="faq" title="Questions">
       <Accordion type="single" collapsible className="mt-8">
         {faqs.map((faq) => (
           <AccordionItem key={faq.id} value={faq.id}>
@@ -247,6 +255,6 @@ export function Faq() {
           </AccordionItem>
         ))}
       </Accordion>
-    </section>
+    </Section>
   );
 }

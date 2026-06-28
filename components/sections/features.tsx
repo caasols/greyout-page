@@ -11,7 +11,7 @@ import {
 const features = [
   { icon: AppWindow, title: "Per-app rules", body: "Auto-grey distracting apps; keep colour where you need it." },
   { icon: CalendarClock, title: "On a schedule", body: "Wind down into greyscale toward the evening, automatically." },
-  { icon: Keyboard, title: "One keypress", body: "Toggle from the menu bar — or any tool via the greyout:// scheme." },
+  { icon: Keyboard, title: "One keypress", body: "Toggle from the menu bar, or from any tool via the greyout:// scheme." },
 ];
 
 const integrations = [
@@ -42,7 +42,7 @@ const integrations = [
 
 export function Features() {
   return (
-    <section id="features" className="mt-20 w-full max-w-5xl px-6 text-left">
+    <section id="features" className="mt-24 w-full max-w-5xl text-left">
       <div className="grid gap-6 sm:grid-cols-3">
         {features.map((f) => (
           <div key={f.title} className="rounded-xl border bg-card p-5">

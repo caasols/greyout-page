@@ -3,9 +3,9 @@ import Link from "next/link";
 import { SUPPORT_EMAIL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact — Greyout",
+  title: "Contact · Greyout",
   description:
-    "Get in touch about Greyout — support, Premium licences, bugs, and feedback.",
+    "Get in touch about Greyout: support, Premium licences, bugs, and feedback.",
 };
 
 export default function ContactPage() {
@@ -13,8 +13,8 @@ export default function ContactPage() {
     <main className="mx-auto w-full max-w-2xl flex-1 px-6 py-20">
       <h1 className="text-3xl font-semibold tracking-tight">Contact</h1>
       <p className="mt-2 text-sm text-muted-foreground">
-        Greyout is a small, independent project — email is the best way to reach
-        me, and I read every message.
+        Greyout is a small, independent project, so email is the best way to
+        reach me. I read every message.
       </p>
 
       <div className="mt-10 space-y-8 text-sm leading-relaxed">
@@ -29,7 +29,7 @@ export default function ContactPage() {
               {SUPPORT_EMAIL}
             </a>
             . I usually reply within a couple of working days. There&apos;s no
-            ticket system and no chatbot — just me.
+            ticket system and no chatbot. Just me.
           </p>
         </section>
 
@@ -68,15 +68,15 @@ export default function ContactPage() {
               Polar
             </a>{" "}
             using the email you bought with. Polar handles payments, VAT, and
-            refunds as merchant of record — but if anything goes wrong, email me
-            and I&apos;ll help sort it out.
+            refunds as merchant of record. If anything goes wrong, email me and
+            I&apos;ll help sort it out.
           </p>
         </section>
 
         <section className="space-y-3">
           <h2 className="text-base font-semibold">Before you write</h2>
           <p className="text-muted-foreground">
-            Many common questions — permissions, per-app rules, refunds — are
+            Many common questions (permissions, per-app rules, refunds) are
             answered in the{" "}
             <Link
               href="/#faq"

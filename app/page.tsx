@@ -6,7 +6,7 @@ import { Changelog } from "@/components/sections/changelog";
 
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col items-center justify-center px-6 py-20 text-center">
+    <main className="flex flex-1 flex-col items-center px-4 py-20 text-center sm:px-6">
       <Hero />
       <SeeIt />
       <Features />
