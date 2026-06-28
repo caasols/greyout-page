@@ -11,24 +11,26 @@ const footerLinks = [
 
 export function SiteFooter() {
   return (
-    <footer className="mt-24 flex flex-col items-center gap-4 pb-10 text-sm text-muted-foreground">
-      <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2">
-        {footerLinks.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            className="underline-offset-4 hover:underline"
-          >
-            {link.label}
+    <footer className="mt-24 pb-10 text-sm text-muted-foreground">
+      <div className="mx-auto flex max-w-5xl flex-col items-center gap-4 px-4 sm:flex-row sm:justify-between sm:px-6">
+        <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2">
+          {footerLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="underline-offset-4 hover:underline"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+        <p>
+          Made with <Cloud className="inline size-3.5 align-[-2px]" /> ·{" "}
+          <a href={GITHUB_URL} className="underline-offset-4 hover:underline">
+            caasols
           </a>
-        ))}
-      </nav>
-      <p>
-        Made with <Cloud className="inline size-3.5 align-[-2px]" /> ·{" "}
-        <a href={GITHUB_URL} className="underline-offset-4 hover:underline">
-          caasols
-        </a>
-      </p>
+        </p>
+      </div>
     </footer>
   );
 }
