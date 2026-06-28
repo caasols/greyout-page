@@ -1,11 +1,11 @@
 import { Cloud } from "lucide-react";
-import { SUPPORT_EMAIL, GITHUB_URL } from "@/lib/site";
+import { GITHUB_URL } from "@/lib/site";
 
 const footerLinks = [
   { href: "/privacy", label: "Privacy" },
   { href: "/terms", label: "Terms" },
   { href: "/#changelog", label: "Changelog" },
-  { href: `mailto:${SUPPORT_EMAIL}`, label: "Contact" },
+  { href: "/contact", label: "Contact" },
   { href: GITHUB_URL, label: "GitHub" },
 ];
 
