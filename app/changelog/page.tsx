@@ -50,7 +50,7 @@ export default function ChangelogPage() {
               </div>
               {release.notesHtml ? (
                 <div
-                  className="prose prose-sm dark:prose-invert max-w-none text-muted-foreground"
+                  className="text-sm text-muted-foreground space-y-2 [&_a]:underline [&_a]:underline-offset-4 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mt-1"
                   dangerouslySetInnerHTML={{ __html: release.notesHtml }}
                 />
               ) : (

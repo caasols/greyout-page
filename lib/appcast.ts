@@ -8,16 +8,22 @@ export interface AppcastItem {
   notesHtml?: string;
 }
 
+function escapeRegExp(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 function extractTag(block: string, tag: string): string {
-  const re = new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`, "i");
+  const safe = escapeRegExp(tag);
+  const re = new RegExp(`<${safe}[^>]*>([\\s\\S]*?)<\\/${safe}>`, "i");
   const m = block.match(re);
   return m ? m[1].trim() : "";
 }
 
 function extractCdata(block: string, tag: string): string | undefined {
+  const safe = escapeRegExp(tag);
   // Match <tag><![CDATA[…]]></tag> or plain text
   const re = new RegExp(
-    `<${tag}[^>]*>(?:<!\\[CDATA\\[([\\s\\S]*?)\\]\\]>|([\\s\\S]*?))<\\/${tag}>`,
+    `<${safe}[^>]*>(?:<!\\[CDATA\\[([\\s\\S]*?)\\]\\]>|([\\s\\S]*?))<\\/${safe}>`,
     "i"
   );
   const m = block.match(re);
@@ -50,7 +56,7 @@ export function readAppcast(): AppcastItem[] {
   }
 
   // Split into <item>…</item> blocks
-  const itemRe = /<item>([\s\S]*?)<\/item>/gi;
+  const itemRe = /<item[^>]*>([\s\S]*?)<\/item>/gi;
   const items: AppcastItem[] = [];
   let match: RegExpExecArray | null;
 
