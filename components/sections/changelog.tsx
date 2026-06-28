@@ -41,16 +41,25 @@ function cleanSummary(
   version: string,
 ): string {
   // Notes may be a one-liner ("Greyout 0.9.1 — …") or a CHANGELOG.md section
-  // (markdown: ### sub-heading, then bullets). Take the first line of real
-  // content and strip markdown so the on-page summary stays clean.
+  // (markdown: ### sub-heading, then bullets that hard-wrap across lines). Skip
+  // leading blanks/headings, then gather the first block — a bullet plus its
+  // wrapped continuation, or the first prose paragraph — stopping at a blank
+  // line, a new bullet, or a heading. Then strip markdown.
   const lines = (body ?? "").split(/\r?\n/);
-  let s = (lines.find((l) => l.trim() && !/^\s*#{1,6}\s/.test(l)) ?? "").trim();
-  s = s.replace(/^[-*]\s+/, ""); // list bullet
+  let i = 0;
+  while (i < lines.length && (!lines[i].trim() || /^\s*#{1,6}\s/.test(lines[i]))) i++;
+  const block: string[] = [];
+  for (let j = i; j < lines.length; j++) {
+    if (!lines[j].trim()) break;
+    if (j > i && /^\s*([-*]\s|#{1,6}\s)/.test(lines[j])) break;
+    block.push(lines[j].trim());
+  }
+  let s = block.join(" ");
+  s = s.replace(/^[-*]\s+/, ""); // leading bullet marker
   s = s.replace(/\*\*([^*]+)\*\*/g, "$1"); // **bold**
   s = s.replace(/`([^`]+)`/g, "$1"); // `code`
   s = s.replace(/\[([^\]]+)\]\([^)]*\)/g, "$1"); // [text](link)
   s = s.replace(/^Greyout\s+v?[\d.]+\s*[—–-]\s*/i, ""); // "Greyout x.y.z —" prefix
-  // Drop "See CHANGELOG(.md)" boilerplate wherever it appears, then tidy up.
   s = s.replace(/\s*See\s+CHANGELOG(\.md)?\.?/gi, " ").replace(/\s{2,}/g, " ").trim();
   s = s.replace(/^[\s.,;:–—-]+/, "").trim();
   if (!s) s = name?.trim() || `Version ${version}`;
