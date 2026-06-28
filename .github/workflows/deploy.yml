@@ -18,11 +18,14 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 20, cache: npm }
       - run: npm ci
-      - name: Build (inject app version from appcast)
+      - name: Build (inject app version and size from appcast)
         run: |
           VERSION=$(grep -oE '<sparkle:version>[^<]+' public/appcast.xml | head -1 | sed 's/.*>//')
           echo "Building site with app version: $VERSION"
-          NEXT_PUBLIC_APP_VERSION="$VERSION" npm run build
+          BYTES=$(grep -oE 'length="[0-9]+"' public/appcast.xml | head -1 | grep -oE '[0-9]+')
+          SIZE=$(awk "BEGIN{printf \"%.1f MB\", $BYTES/1048576}")
+          echo "App size: $SIZE"
+          NEXT_PUBLIC_APP_VERSION="$VERSION" NEXT_PUBLIC_APP_SIZE="$SIZE" npm run build
       - uses: actions/upload-pages-artifact@v3
         with: { path: out }
   deploy:

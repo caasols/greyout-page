@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Cloud, AppWindow, CalendarClock, Keyboard, Download } from "lucide-react";
+import { APP_SIZE } from "@/lib/site";
 
 const DOWNLOAD_URL =
   "https://github.com/caasols/greyout-page/releases/latest/download/Greyout-macOS.zip";
@@ -16,6 +17,7 @@ const features = [
 
 export default function Home() {
   const version = VERSION;
+  const size = APP_SIZE;
   return (
     <main className="flex flex-1 flex-col items-center justify-center px-6 py-20 text-center">
       <div className="mx-auto w-full max-w-2xl">
@@ -38,7 +40,7 @@ export default function Home() {
           <Button asChild size="lg" className="h-12 px-7 text-base">
             <a href={DOWNLOAD_URL}>
               <Download className="size-5" />
-              Download for macOS{version ? ` · v${version}` : ""}
+              Download for macOS{version ? ` · v${version}` : ""}{size ? ` · ${size}` : ""}
             </a>
           </Button>
           <span className="text-sm text-muted-foreground">
