@@ -20,16 +20,16 @@ export default function Image() {
           gap: "32px",
         }}
       >
-        {/* Cloud glyph via SVG */}
+        {/* Cloud glyph via SVG (lucide Cloud, square 24×24 viewBox so it
+            isn't squashed; Satori sizes via CSS, not width/height attrs) */}
         <svg
-          width="96"
-          height="72"
-          viewBox="0 0 24 18"
+          style={{ width: "96px", height: "96px" }}
+          viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M20 16H4a4 4 0 0 1-.8-7.92 6 6 0 1 1 11.6 0A4 4 0 0 1 20 16z"
+            d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"
             stroke="#9ca3af"
             strokeWidth="1.5"
             strokeLinecap="round"
