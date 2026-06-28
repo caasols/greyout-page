@@ -39,3 +39,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# private — planning & scope (do not publish)
+roadmap.md
+TODO.md
+NOTES.md
+*.local.md
+/notes/
+/docs/
+/.private/
+
+# local agent / editor config
+AGENTS.md
+CLAUDE.md
+.claude/
+.idea/
+.vscode/
