@@ -2,6 +2,7 @@
 
 import { useTheme } from "next-themes";
 import { Sun, Moon, Monitor } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -20,8 +21,24 @@ export function ThemeToggle() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" aria-label="Toggle theme">
-          {isDark ? <Moon /> : <Sun />}
+        <Button
+          variant="ghost"
+          size="icon"
+          aria-label="Toggle theme"
+          className="relative"
+        >
+          <Sun
+            className={cn(
+              "transition-opacity duration-200",
+              isDark ? "opacity-0" : "opacity-100",
+            )}
+          />
+          <Moon
+            className={cn(
+              "absolute transition-opacity duration-200",
+              isDark ? "opacity-100" : "opacity-0",
+            )}
+          />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
