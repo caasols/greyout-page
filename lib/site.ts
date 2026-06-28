@@ -1,6 +1,7 @@
 export const DOWNLOAD_URL =
   "https://github.com/caasols/greyout-page/releases/latest/download/Greyout-macOS.zip";
-export const BUY_URL = "https://polar.sh/carlos-sol";
+export const BUY_URL =
+  "https://buy.polar.sh/polar_cl_iT4TD2VSkrQfucsiKgyMiu112QF5s9cEC9pjD0EQ5LT";
 export const SUPPORT_EMAIL = "hello@greyout.cc";
 export const GITHUB_URL = "https://github.com/caasols";
 export const APP_VERSION = process.env.NEXT_PUBLIC_APP_VERSION ?? null;
