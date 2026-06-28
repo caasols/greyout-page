@@ -8,7 +8,10 @@ const features = [
 
 export function Features() {
   return (
-    <section id="features" className="mt-20 grid gap-6 text-left sm:grid-cols-3">
+    <section
+      id="features"
+      className="mt-20 grid w-full max-w-5xl gap-6 px-6 text-left sm:grid-cols-3"
+    >
       {features.map((f) => (
         <div key={f.title} className="rounded-xl border bg-card p-5">
           <f.icon className="size-5 text-muted-foreground" strokeWidth={1.75} />
