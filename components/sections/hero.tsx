@@ -31,10 +31,7 @@ export function Hero() {
           </a>
         </Button>
         <p className="text-xs text-muted-foreground">
-          macOS may warn on first open —{" "}
-          <a href="#faq" className="underline-offset-4 hover:underline">
-            here&apos;s why &amp; how
-          </a>
+          macOS may warn on first open
         </p>
         <span className="text-sm text-muted-foreground">
           Requires macOS 14+ · Apple silicon · free · self-updating

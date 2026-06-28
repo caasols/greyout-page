@@ -76,8 +76,8 @@ export default function ContactPage() {
         <section className="space-y-3">
           <h2 className="text-base font-semibold">Before you write</h2>
           <p className="text-muted-foreground">
-            Many common questions — permissions, the &lsquo;unidentified
-            developer&rsquo; prompt, per-app rules, refunds — are answered in the{" "}
+            Many common questions — permissions, per-app rules, refunds — are
+            answered in the{" "}
             <Link
               href="/#faq"
               className="underline underline-offset-4 hover:text-foreground"

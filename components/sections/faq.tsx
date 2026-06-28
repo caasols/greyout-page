@@ -126,18 +126,6 @@ const faqs = [
     ),
   },
   {
-    id: "open-source",
-    question: "Is Greyout open source?",
-    answer: (
-      <p>
-        Not at the moment — Greyout is currently closed-source. It stays
-        privacy-friendly regardless: no analytics or tracking, and the only
-        network calls it makes are update checks and (if you buy Premium)
-        licence activation.
-      </p>
-    ),
-  },
-  {
     id: "licence-recovery",
     question: "How do I recover my Premium licence key if I lose it?",
     answer: (
@@ -172,21 +160,6 @@ const faqs = [
         Yes. Greyout is free for any use, including at work. Premium is purely an
         optional way to support development and unlock backup of your settings —
         it&apos;s never required, for commercial use or otherwise.
-      </p>
-    ),
-  },
-  {
-    id: "notarization",
-    question: "Why does macOS say Greyout is from an unidentified developer?",
-    answer: (
-      <p>
-        Greyout isn&apos;t notarized by Apple yet (notarization requires a paid
-        Apple Developer account — it&apos;s on the roadmap), so macOS shows a
-        caution on first launch. To open it: right-click (or Control-click)
-        Greyout → Open → Open; or go to System Settings → Privacy &amp;
-        Security and click &lsquo;Open Anyway&rsquo;. You only do this once.
-        Updates stay safe regardless: every update is cryptographically signed
-        and verified before it installs.
       </p>
     ),
   },
