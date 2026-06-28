@@ -15,7 +15,7 @@ export function Hero() {
       <p className="mt-3 text-xl text-muted-foreground">
         Grey out your screen. Kill the distraction.
       </p>
-      <p className="mx-auto mt-5 max-w-md text-pretty text-muted-foreground">
+      <p className="mx-auto mt-5 max-w-lg text-pretty text-muted-foreground">
         For anyone whose screen keeps stealing their focus. Greyout is a tiny, native
         menu-bar app for macOS that instantly drains the colour from your display —
         easing the pull of bright apps and notifications — automatically per app, on a
