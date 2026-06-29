@@ -109,18 +109,18 @@
   position: absolute;
   inset: -25%;
   background:
-    radial-gradient(38% 30% at 18% 28%, color-mix(in oklch, var(--foreground) 7%, transparent), transparent 70%),
-    radial-gradient(34% 26% at 72% 18%, color-mix(in oklch, var(--foreground) 6%, transparent), transparent 70%),
-    radial-gradient(44% 34% at 82% 72%, color-mix(in oklch, var(--foreground) 6%, transparent), transparent 70%),
-    radial-gradient(30% 26% at 38% 82%, color-mix(in oklch, var(--foreground) 7%, transparent), transparent 70%);
-  filter: blur(44px);
+    radial-gradient(40% 32% at 18% 26%, color-mix(in oklch, var(--foreground) 16%, transparent), transparent 72%),
+    radial-gradient(36% 28% at 72% 16%, color-mix(in oklch, var(--foreground) 13%, transparent), transparent 72%),
+    radial-gradient(48% 38% at 84% 74%, color-mix(in oklch, var(--foreground) 13%, transparent), transparent 72%),
+    radial-gradient(32% 28% at 36% 84%, color-mix(in oklch, var(--foreground) 15%, transparent), transparent 72%);
+  filter: blur(40px);
   will-change: transform;
   animation: cloud-drift 70s ease-in-out infinite alternate;
 }
 .cloud-bg::after {
   animation-duration: 105s;
   animation-direction: alternate-reverse;
-  opacity: 0.65;
+  opacity: 0.8;
 }
 @keyframes cloud-drift {
   from {
