@@ -18,6 +18,10 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 20, cache: npm }
       - run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Type-check
+        run: npx tsc --noEmit
       - name: Build (inject app version and size from appcast)
         env:
           # Lets the changelog section fetch GitHub Releases at build with a
