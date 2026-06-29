@@ -10,9 +10,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { NAV } from "@/lib/site";
+import { useMessages } from "@/components/locale-provider";
 
 // Shown only below the `sm` breakpoint, where the inline nav links are hidden.
 export function MobileNav() {
+  const m = useMessages();
+
   return (
     <div className="sm:hidden">
       <DropdownMenu>
@@ -22,9 +25,9 @@ export function MobileNav() {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          {NAV.map(({ href, label }) => (
+          {NAV.map(({ href, key }) => (
             <DropdownMenuItem key={href} asChild>
-              <Link href={href}>{label}</Link>
+              <Link href={href}>{m.nav[key]}</Link>
             </DropdownMenuItem>
           ))}
         </DropdownMenuContent>

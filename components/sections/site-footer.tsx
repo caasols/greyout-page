@@ -1,14 +1,17 @@
-import { Cloud } from "lucide-react";
-import { m } from "@/lib/messages";
+"use client";
 
-const footerLinks = [
-  { href: "/privacy", label: m.footer.privacy },
-  { href: "/terms", label: m.footer.terms },
-  { href: "/#changelog", label: m.footer.changelog },
-  { href: "/contact", label: m.footer.contact },
-];
+import { Cloud } from "lucide-react";
+import { useMessages } from "@/components/locale-provider";
 
 export function SiteFooter() {
+  const m = useMessages();
+  const footerLinks = [
+    { href: "/privacy", label: m.footer.privacy },
+    { href: "/terms", label: m.footer.terms },
+    { href: "/#changelog", label: m.footer.changelog },
+    { href: "/contact", label: m.footer.contact },
+  ];
+
   return (
     <footer className="mt-24 pb-10 text-sm text-muted-foreground">
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-4 px-4 sm:flex-row sm:justify-between sm:px-6">

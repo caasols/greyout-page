@@ -1,7 +1,10 @@
+"use client";
+
 import { Section } from "@/components/section";
-import { m } from "@/lib/messages";
+import { useMessages } from "@/components/locale-provider";
 
 export function SeeIt() {
+  const m = useMessages();
   return (
     <Section id="see-it" title={m.seeIt.title} subtitle={m.seeIt.subtitle}>
       {/* Primary demo placeholder, 16:9 */}

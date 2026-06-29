@@ -1,9 +1,12 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Cloud, Download } from "lucide-react";
 import { DOWNLOAD_URL, APP_VERSION, APP_SIZE } from "@/lib/site";
-import { m } from "@/lib/messages";
+import { useMessages } from "@/components/locale-provider";
 
 export function Hero() {
+  const m = useMessages();
   return (
     <div className="mx-auto w-full max-w-2xl">
       <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-2xl border bg-muted/40">

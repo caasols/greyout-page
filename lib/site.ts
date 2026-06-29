@@ -1,5 +1,3 @@
-import { m } from "@/lib/messages";
-
 export const DOWNLOAD_URL =
   "https://github.com/caasols/greyout-page/releases/latest/download/Greyout-macOS.zip";
 export const BUY_URL =
@@ -22,9 +20,10 @@ export const RUNNING_COSTS = [
 
 // Root-relative anchors so the nav works from any page (e.g. /privacy), not
 // just the home page. Order mirrors the on-page section flow.
+// `key` indexes into messages.nav so the label localizes at render time.
 export const NAV = [
-  { href: "/#see-it", label: m.nav.seeIt },
-  { href: "/#features", label: m.nav.features },
-  { href: "/#faq", label: m.nav.faq },
-  { href: "/#changelog", label: m.nav.changelog },
-];
+  { href: "/#see-it", key: "seeIt" },
+  { href: "/#features", key: "features" },
+  { href: "/#faq", key: "faq" },
+  { href: "/#changelog", key: "changelog" },
+] as const;

@@ -1,8 +1,11 @@
+"use client";
+
 import { PREMIUM_RAISED_EUR, RUNNING_COSTS } from "@/lib/site";
-import { m } from "@/lib/messages";
+import { useMessages } from "@/components/locale-provider";
 
 // Transparency-report answer for the "If Greyout is free, why ask for money?" FAQ.
 export function Transparency() {
+  const m = useMessages();
   const total = RUNNING_COSTS.reduce((sum, c) => sum + c.amount, 0);
   const pct =
     total > 0 ? Math.min(100, Math.round((PREMIUM_RAISED_EUR / total) * 100)) : 0;

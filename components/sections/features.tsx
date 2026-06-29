@@ -1,3 +1,5 @@
+"use client";
+
 import {
   AppWindow,
   CalendarClock,
@@ -7,13 +9,14 @@ import {
   Workflow,
   Search,
 } from "lucide-react";
-import { m } from "@/lib/messages";
+import { useMessages } from "@/components/locale-provider";
 
 // Icons stay here (not copy); they map to the message arrays by index.
 const featureIcons = [AppWindow, CalendarClock, Keyboard];
 const integrationIcons = [Command, Terminal, Workflow, Search];
 
 export function Features() {
+  const m = useMessages();
   return (
     <section id="features" className="mt-24 w-full max-w-5xl text-left">
       <div className="grid gap-6 sm:grid-cols-3">

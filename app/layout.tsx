@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/sections/site-footer";
+import { LocaleProvider } from "@/components/locale-provider";
 import { m } from "@/lib/messages";
 
 const nunitoSans = Nunito_Sans({ subsets: ["latin"], variable: "--font-sans" });
@@ -69,9 +70,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <SiteHeader />
-          {children}
-          <SiteFooter />
+          <LocaleProvider>
+            <SiteHeader />
+            {children}
+            <SiteFooter />
+          </LocaleProvider>
         </ThemeProvider>
       </body>
     </html>
