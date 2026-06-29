@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/sections/site-footer";
+import { m } from "@/lib/messages";
 
 const nunitoSans = Nunito_Sans({ subsets: ["latin"], variable: "--font-sans" });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -12,16 +13,16 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   metadataBase: new URL("https://greyout.cc"),
   applicationName: "Greyout",
-  title: "Greyout: grey out your screen, kill the distraction",
+  title: m.meta.title,
   description:
-    "A macOS menu-bar app that greys out your screen to reduce the pull of colour and notifications. Per-app rules, schedules, one keypress.",
+    m.meta.description,
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Greyout: grey out your screen, kill the distraction",
+    title: m.meta.title,
     description:
-      "A macOS menu-bar app that greys out your screen to reduce the pull of colour and notifications. Per-app rules, schedules, one keypress.",
+      m.meta.description,
     url: "https://greyout.cc",
     siteName: "Greyout",
     type: "website",
@@ -29,9 +30,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Greyout: grey out your screen, kill the distraction",
+    title: m.meta.title,
     description:
-      "A macOS menu-bar app that greys out your screen to reduce the pull of colour and notifications. Per-app rules, schedules, one keypress.",
+      m.meta.description,
   },
 };
 

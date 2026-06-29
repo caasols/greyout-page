@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { SUPPORT_EMAIL } from "@/lib/site";
+import { m } from "@/lib/messages";
 
 export const metadata: Metadata = {
-  title: "Terms — Greyout",
+  title: m.meta.termsTitle,
 };
 
 export default function TermsPage() {

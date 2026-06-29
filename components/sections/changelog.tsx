@@ -1,5 +1,6 @@
 import { ChevronDown } from "lucide-react";
 import { Section } from "@/components/section";
+import { m } from "@/lib/messages";
 import { RELEASES as FALLBACK, type Release } from "@/lib/changelog";
 
 // How many recent releases to show before the "show all" expander.
@@ -128,11 +129,13 @@ export async function Changelog() {
   return (
     <Section
       id="changelog"
-      title="Changelog"
-      subtitle="Greyout updates itself automatically. Here's what's changed."
+      title={m.changelog.title}
+      subtitle={m.changelog.subtitle}
     >
       {releases.length === 0 ? (
-        <p className="mt-8 text-sm text-muted-foreground">No releases yet.</p>
+        <p className="mt-8 text-sm text-muted-foreground">
+          {m.changelog.noReleases}
+        </p>
       ) : (
         <>
           <ol className="mt-8 space-y-6">
@@ -149,10 +152,14 @@ export async function Changelog() {
                   aria-hidden="true"
                 />
                 <span className="group-open:hidden">
-                  Show {hidden.length} earlier release
-                  {hidden.length > 1 ? "s" : ""}
+                  {(hidden.length > 1
+                    ? m.changelog.showEarlierMany
+                    : m.changelog.showEarlierOne
+                  ).replace("{count}", String(hidden.length))}
                 </span>
-                <span className="hidden group-open:inline">Show fewer</span>
+                <span className="hidden group-open:inline">
+                  {m.changelog.showFewer}
+                </span>
               </summary>
               <ol className="mt-6 space-y-6">
                 {hidden.map((release) => (
