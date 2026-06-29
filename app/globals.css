@@ -92,3 +92,47 @@
     scroll-padding-top: 4.5rem;
   }
 }
+
+/* Subtle, monochrome drifting "clouds" behind the content. Tonal only (built
+   from the theme foreground), so it stays calm and on-brand in light and dark.
+   Negative z-index paints it above the body background but below all content. */
+.cloud-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.cloud-bg::before,
+.cloud-bg::after {
+  content: "";
+  position: absolute;
+  inset: -25%;
+  background:
+    radial-gradient(38% 30% at 18% 28%, color-mix(in oklch, var(--foreground) 7%, transparent), transparent 70%),
+    radial-gradient(34% 26% at 72% 18%, color-mix(in oklch, var(--foreground) 6%, transparent), transparent 70%),
+    radial-gradient(44% 34% at 82% 72%, color-mix(in oklch, var(--foreground) 6%, transparent), transparent 70%),
+    radial-gradient(30% 26% at 38% 82%, color-mix(in oklch, var(--foreground) 7%, transparent), transparent 70%);
+  filter: blur(44px);
+  will-change: transform;
+  animation: cloud-drift 70s ease-in-out infinite alternate;
+}
+.cloud-bg::after {
+  animation-duration: 105s;
+  animation-direction: alternate-reverse;
+  opacity: 0.65;
+}
+@keyframes cloud-drift {
+  from {
+    transform: translate3d(-3%, -2%, 0) scale(1.05);
+  }
+  to {
+    transform: translate3d(3%, 2%, 0) scale(1.15);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cloud-bg::before,
+  .cloud-bg::after {
+    animation: none;
+  }
+}

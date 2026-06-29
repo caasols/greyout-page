@@ -1,17 +1,25 @@
-import { en } from "@/lib/messages/en";
+import { en, type Messages } from "@/lib/messages/en";
+import { de } from "@/lib/messages/de";
+import { es } from "@/lib/messages/es";
+import { it } from "@/lib/messages/it";
+import { pt } from "@/lib/messages/pt";
 
-// The shape every locale dictionary must match. Add a locale by creating a file
-// the same shape as en.ts, importing it here, and adding it to `locales` +
-// `dictionaries` below — the selector and detection pick it up automatically.
-export type Messages = typeof en;
+export type { Messages };
 
-export const locales = [{ code: "en", label: "English" }] as const;
+// Listed alphabetically by label (also the order shown in the selector).
+export const locales = [
+  { code: "de", label: "Deutsch" },
+  { code: "en", label: "English" },
+  { code: "es", label: "Español" },
+  { code: "it", label: "Italiano" },
+  { code: "pt", label: "Português" },
+] as const;
 
 export type LocaleCode = (typeof locales)[number]["code"];
 
 export const defaultLocale: LocaleCode = "en";
 
-export const dictionaries: Record<LocaleCode, Messages> = { en };
+export const dictionaries: Record<LocaleCode, Messages> = { de, en, es, it, pt };
 
 export function isLocale(value: string): value is LocaleCode {
   return locales.some((l) => l.code === value);

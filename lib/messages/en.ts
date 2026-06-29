@@ -255,4 +255,7 @@ export const en = {
     troublePre: "Trouble with your key or didn't get the email? Reach out at ",
     troublePost: ".",
   },
-} as const;
+};
+
+// Every other locale dictionary is typed against this shape.
+export type Messages = typeof en;
