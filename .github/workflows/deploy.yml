@@ -39,6 +39,10 @@ jobs:
           SIZE=$(awk "BEGIN{printf \"%.1f MB\", $BYTES/1048576}")
           echo "App size: $SIZE"
           NEXT_PUBLIC_APP_VERSION="$VERSION" NEXT_PUBLIC_APP_SIZE="$SIZE" npm run build
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+      - name: Smoke tests (against the built site)
+        run: npm run test:e2e
       - uses: actions/upload-pages-artifact@v3
         with: { path: out }
   deploy:
