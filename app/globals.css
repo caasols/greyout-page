@@ -109,10 +109,10 @@
   position: absolute;
   inset: -25%;
   background:
-    radial-gradient(40% 32% at 18% 26%, color-mix(in oklch, var(--foreground) 11%, transparent), transparent 72%),
-    radial-gradient(36% 28% at 72% 16%, color-mix(in oklch, var(--foreground) 10%, transparent), transparent 72%),
-    radial-gradient(48% 38% at 84% 74%, color-mix(in oklch, var(--foreground) 10%, transparent), transparent 72%),
-    radial-gradient(32% 28% at 36% 84%, color-mix(in oklch, var(--foreground) 11%, transparent), transparent 72%);
+    radial-gradient(40% 32% at 18% 26%, color-mix(in oklch, var(--foreground) 13%, transparent), transparent 72%),
+    radial-gradient(36% 28% at 72% 16%, color-mix(in oklch, var(--foreground) 12%, transparent), transparent 72%),
+    radial-gradient(48% 38% at 84% 74%, color-mix(in oklch, var(--foreground) 12%, transparent), transparent 72%),
+    radial-gradient(32% 28% at 36% 84%, color-mix(in oklch, var(--foreground) 13%, transparent), transparent 72%);
   filter: blur(42px);
   will-change: transform;
   animation: cloud-drift 34s ease-in-out infinite alternate;
